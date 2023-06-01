@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: ecr-fargate-nodejs-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ecr-fargate-nodejs-app
+    ports:
+      - 8080:80
+    volumes:
+      - .:/app
+    command: node server.js
