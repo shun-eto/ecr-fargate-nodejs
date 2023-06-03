@@ -2,12 +2,14 @@ FROM node:18.16.0-alpine
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+RUN npm install -g pnpm
 
-RUN npm install
+COPY package*.json pnpm-lock.yaml ./
+
+RUN pnpm install
 
 COPY . .
 
 EXPOSE 3000
 
-CMD [ "node", "server.js" ]
+CMD [ "pnpm", "start" ]
