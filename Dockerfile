@@ -14,4 +14,4 @@ RUN pnpm build
 
 EXPOSE 3000
 
-CMD [ "pnpm", "start" ]
+CMD [ "pnpm", "start"]
